@@ -1,0 +1,6 @@
+Frente  v1 - v2 - v3 - v4
+Atras   v6 - v5 - v8 - v7
+Izq     v5 - v1 - v4 - v8
+Der     v2 - v6 - v7 - v3
+Debajo  v4 - v3 - v7 - v8
+Arriba  v5 - v6 - v2 - v1

@@ -1,0 +1,79 @@
+    //Cabeza
+    glVertex3f(-0.5f, 2.5f, 1.5f); //v1
+    glVertex3f(0.5f, 2.5f, 1.5f); //v2
+    glVertex3f(0.5f, 1.5f, 1.5f); //v3
+    glVertex3f(-0.5f, 1.5f, 1.5f); //v4
+    glVertex3f(-0.5f, 2.5f, 0.5f); //v5
+    glVertex3f(0.5f, 2.5f, 0.5f); //v6
+    glVertex3f(0.5f, 1.5f, 0.5f); //v7
+    glVertex3f(-0.5f, 1.5f, 0.5f); //v8
+
+    //Pico
+    glVertex3f(-0.5f, 2.0f, 1.8f); //v1
+    glVertex3f(0.5f, 2.0f, 1.8f); //v2
+    glVertex3f(0.5f, 1.8f, 1.8f); //v3
+    glVertex3f(-0.5f, 1.8f, 1.8f); //v4
+    glVertex3f(-0.5f, 2.0f, 1.5f); //v5
+    glVertex3f(0.5f, 2.0f, 1.5f); //v6
+    glVertex3f(0.5f, 1.8f, 1.5f); //v7
+    glVertex3f(-0.5f, 1.8f, 1.5f); //v8
+
+    //Cresta
+    glVertex3f(-0.25f, 1.9f, 1.75f); //v1
+    glVertex3f(0.25f, 1.9f, 1.75f); //v2
+    glVertex3f(0.35f, 1.7f, 1.75f); //v3
+    glVertex3f(-0.25f, 1.7f, 1.75f); //v4
+    glVertex3f(-0,25f, 1.9f, 1.55f); //v5
+    glVertex3f(0.25f, 1.9f, 1.55f); //v6
+    glVertex3f(0.25f, 1.7f, 1.55f); //v7
+    glVertex3f(-0.25f, 1.7f, 1.55f); //v8
+
+    // Cuerpo
+    glVertex3f(-1.0f, 1.5f, 1.0f); //v1
+    glVertex3f(1.0f, 1.5f, 1.0f); //v2
+    glVertex3f(1.0f, -0,5f, 1.0f); //v3
+    glVertex3f(-1.0f, -0.5f, 1.0f); //v4
+    glVertex3f(-1.0f, 1.5f, -1.0f); //v5
+    glVertex3f(1.0f, 1.5f, -1.0f); //v6
+    glVertex3f(1.0f, -0.5f, -1.0f); //v7
+    glVertex3f(-1.0f, -0.5f, -1.0f); //v8
+
+    // Ala D
+    glVertex3f(-1.2f, 1.5f, 0.75f); //v1
+    glVertex3f(-0.8f, 1.5f, 0.75f); //v2
+    glVertex3f(-0.8f, 0.0f, 0.75f); //v3
+    glVertex3f(-1.2f, 0.0f, 0.75f); //v4
+    glVertex3f(-1.2f, 1.5f, -0.75f); //v5
+    glVertex3f(-0.8f, 1.5f, -0.75f); //v6
+    glVertex3f(-0.8f, 0.0f, -0.75f); //v7
+    glVertex3f(-1.2f, 0.0f, -0.75f); //v8
+
+    //Ala I
+    glVertex3f(0.8f, 1.5f, 0.75f); //v1
+    glVertex3f(1.2f, 1.5f, 0.75f); //v2
+    glVertex3f(1.2f, 0.0f, 0.75f); //v3
+    glVertex3f(0.8f, 0.0f, 0.75f); //v4
+    glVertex3f(0.8f, 1.5f, -0.75f); //v5
+    glVertex3f(1.2f, 1.5f, -0.75f); //v6
+    glVertex3f(1.2f, 0.0f, -0.75f); //v7
+    glVertex3f(0.8f, 0.0f, -0.75f); //v8
+
+    //Pierna D
+    glVertex3f(-0.7, -0.5f, 0.2f); //v1
+    glVertex3f(-0.3, -0.5f, 0.2f); //v2
+    glVertex3f(-0.3, -2.0f, 0.2f); //v3
+    glVertex3f(-0.7, -2.0f, 0.2f); //v4
+    glVertex3f(-0.7, -0.5f, -0.2f); //v5
+    glVertex3f(-0.3, -0.5f, -0.2f); //v6
+    glVertex3f(-0.3, -2.0f, -0.2f); //v7
+    glVertex3f(-0.7, -2.0f, -0.2f); //v8
+
+    //Pierna I
+    glVertex3f(0.3f, -0.5f, 0.2f); //v1
+    glVertex3f(0.7f, -0.5f, 0.2f); //v2
+    glVertex3f(0.7f, -2.0f, 0.2f); //v3
+    glVertex3f(0.3f, -2.0f, 0.2f); //v4
+    glVertex3f(0.3f, -0.5f, -0.2f); //v5
+    glVertex3f(0.7f, -0.5f, -0.2f); //v6
+    glVertex3f(0.7f, -2.0f, -0.2f); //v7
+    glVertex3f(0.3f, -2.0f, -0.2f); //v8
