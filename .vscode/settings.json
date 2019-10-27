@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.svelte": "html",
+        "cstdio": "c",
+        "stdio.h": "c"
+    }
+}

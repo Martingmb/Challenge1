@@ -1,20 +1,21 @@
 #include <GLUT/glut.h>
+#include <stdio.h>
 
 /**
  * !Parameters for scaling
 */
 
-double xScale = 0.2;
-double yScale = 0.2;
-double zScale = 0.2;
+float xScale = 0.2f;
+float yScale = 0.2f;
+float zScale = 0.2f;
 
 /**
  * !Parameters for translating
 */
 
-double xTranslate = 0.0;
-double yTranslate = 0.0;
-double zTranslate = 0.0;
+float xTranslate = 0.0f;
+float yTranslate = 0.0f;
+float zTranslate = 0.0f;
 
 /**
  * !Parameters for rotating
@@ -28,8 +29,10 @@ double zAxis = 0.0;
 int angle = 90;
 
 
-
 void drawBox(GLfloat x, GLfloat y, GLfloat z) {
+
+    
+
     /**
      * *De limita los vertices de un primitivo
      * !GL_QUADS es el paramaetro que representa un modo, en especifico trata un grupo de 4 vertices como un quadrilatero
@@ -39,8 +42,6 @@ void drawBox(GLfloat x, GLfloat y, GLfloat z) {
     /**
      * !glColor3f define el color actual
     */
-    // glColor3f(1.0f, 0.0f, 0.0f);
-
 
     /**
      * *Cara
@@ -390,12 +391,14 @@ void drawBox(GLfloat x, GLfloat y, GLfloat z) {
 void display(void)
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+  glLoadIdentity();
+  glTranslatef(xTranslate, yTranslate, zTranslate);
   glScalef(xScale, yScale, zScale);
   glRotatef(angle, xAxis, yAxis, zAxis);
+
   drawBox(1.0f, 1.0f, 1.0f);
 
-
+  glFlush();  
   glutSwapBuffers();
 }
 
@@ -432,11 +435,93 @@ void init(void) {
 
     
     
-    glRotatef(xROT, 0.0, 1.0, 0.0);
+    glRotatef(angle, 0.0, 1.0, 0.0);
+
+    glFlush();
+	glutSwapBuffers();
 
 }
 
+/**
+ * !Function for the keyboard
+ * ?A switch statement to listen to the keypresses, it updates their corresponding value
+*/
+
+void keyboard(unsigned char key) {
+    switch (key)
+    {
+    case 27:
+        exit(1);
+        break;
+    case 'w':
+    case 'W':
+        yTranslate += 0.05f;
+        break;
+    
+    case 's':
+    case 'S':
+        yTranslate -= 0.05f;
+        break;
+    
+    case 'd':
+    case 'D':
+        xTranslate += 0.05f;
+        break;
+    
+    case 'a':
+    case 'A': 
+        xTranslate -= 0.05f;
+        break;
+    
+    case 'q':
+    case 'Q':
+        angle -= 8;
+        break;
+    case 'e':
+    case 'E':
+        angle += 8;
+        break;
+
+	case 'Z':
+	case 'z':
+		xScale += 0.05f;
+        yScale += 0.05f;
+        zScale += 0.05f;
+		break;
+	case 'X':
+	case 'x':
+        xScale -= 0.05f;
+        yScale -= 0.05f;
+        zScale -= 0.05f;
+		break;
+
+    default:
+        break;
+    }
+
+    glutPostRedisplay();
+}
+
+/**
+ * !Function
+ * ?Displays the instructions to scale, rotate and translate the model
+*/
+
+void instructions()
+{
+    printf("q -----------> Rotate counter clockwise\n");
+    printf("e -----------> Rotate clockwise\n");
+    printf("W or w ------> Up\n");
+    printf("S or s -----> Down\n");
+    printf("D or d ------> Right\n");
+    printf("A or a ------> Left\n");
+    printf("Z or z ------> Scale Up\n");
+    printf("X or x ------> Scale Down\n");
+    printf("Escape Key ---> Exit \n");
+}
+
 int main(int argc, char **argv) {
+    instructions();
     glutInit(&argc, argv);
     glutInitWindowSize(500, 500);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
@@ -446,9 +531,13 @@ int main(int argc, char **argv) {
      * !glutDisplayFunc, funciona como un call back a la funcion que se encuentra en el parametro
     */
     glutDisplayFunc(display);
-
-    init();
+    glutKeyboardFunc(keyboard);
     
+    
+    init();
+
+
+
 
     /**
      * !glutMainLoop, hace que entre en el loop de GLUT para el procesamiento de eventos
